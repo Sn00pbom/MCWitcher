@@ -1,5 +1,7 @@
 package com.sn00pbom.mcwitcher;
 
+import com.sn00pbom.mcwitcher.item.ModItems;
+import com.sn00pbom.mcwitcher.proxy.ClientProxy;
 import com.sn00pbom.mcwitcher.proxy.CommonProxy;
 import com.sn00pbom.mcwitcher.tab.CreativeTabWitcher;
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,6 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
+
 @Mod(modid = MCWitcher.MODID, name = MCWitcher.NAME, version = MCWitcher.VERSION)
 public class MCWitcher
 {
@@ -22,7 +25,7 @@ public class MCWitcher
     private static Logger logger;
 
     @SidedProxy(clientSide = "com.sn00pbom.mcwitcher.proxy.ClientProxy", serverSide = "com.sn00pbom.mcwitcher.proxy.CommonProxy")
-    public static CommonProxy proxy;
+    public static ClientProxy proxy;
 
     @Mod.Instance
     public static MCWitcher instance;
@@ -32,9 +35,15 @@ public class MCWitcher
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        tabWitcher = new CreativeTabWitcher(CreativeTabs.getNextID(),"tab_mcwitcher");
-        proxy.preInit(event);
         logger = event.getModLog();
+        tabWitcher = new CreativeTabWitcher(CreativeTabs.getNextID(),"tab_mcwitcher");
+        ModItems.preInit();
+        proxy.preInit(event);
+
+
+
+
+
     }
 
     @EventHandler
@@ -43,7 +52,7 @@ public class MCWitcher
 
         proxy.init(event);
         // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        logger.info("SILVER SWORD >> {}", ModItems.basicSilverSword.getRegistryName());
 
     }
 
@@ -51,5 +60,12 @@ public class MCWitcher
     public void postInit(FMLPostInitializationEvent event){
         proxy.postInit(event);
 
+    }
+
+    public static void db(){
+        logger.info("db");
+    }
+    public static void db(Object object){
+        logger.info("db " + object);
     }
 }

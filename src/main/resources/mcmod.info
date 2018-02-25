@@ -3,13 +3,13 @@
   "modid": "mcwitcher",
   "name": "MCWitcher",
   "description": "A mod adding some game mechanics similar to the Witcher games and books as well as some hefty bosses.",
-  "version": "${version}",
+  "version": "1.0",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["Sn00pbom"],
   "credits": "my mom for buying me ramen",
-  "logoFile": "mcwitcher.png",
+  "logoFile": "mcwitcher_logo.png",
   "screenshots": [],
   "dependencies": []
 }
