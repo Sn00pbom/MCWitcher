@@ -1,19 +1,13 @@
 package com.sn00pbom.mcwitcher.item;
 
 import com.sn00pbom.mcwitcher.MCWitcher;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemMeshDefinition;
-import net.minecraft.client.renderer.ItemModelMesher;
-import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -25,7 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModItems {
 
     public static ItemSilverSword basicSilverSword =  new ItemSilverSword("silver_sword",13F,10F);
-    public static SilverIngot silverIngot = new SilverIngot("silver_ingot");
+    public static ItemSilverIngot silverIngot = new ItemSilverIngot("silver_ingot");
 
     public static void preInit() {
 //        basicSilverSword = ;
@@ -68,8 +62,8 @@ public class ModItems {
 
 
 
-        ModelLoader.setCustomModelResourceLocation(basicSilverSword, 0, new ModelResourceLocation( Item.REGISTRY.getNameForObject(basicSilverSword),"inventory"));
-        ModelLoader.setCustomModelResourceLocation(silverIngot, 0, new ModelResourceLocation( "minecraft:items/iron_sword","inventory"));
+        ModelLoader.setCustomModelResourceLocation(basicSilverSword, 0, new ModelResourceLocation( basicSilverSword.getRegistryName(),"inventory"));
+        ModelLoader.setCustomModelResourceLocation(silverIngot, 0, new ModelResourceLocation( silverIngot.getRegistryName(),"inventory"));
         MCWitcher.db();
     }
 //    private void registerItemModel(final Item item, final String modelLocation) {
