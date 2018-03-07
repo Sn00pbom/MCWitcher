@@ -1,7 +1,7 @@
 package com.sn00pbom.mcwitcher.item;
 
 import com.sn00pbom.mcwitcher.MCWitcher;
-import javafx.scene.paint.Material;
+import com.sn00pbom.mcwitcher.proxy.ClientProxy;
 import net.minecraft.item.ItemSword;
 
 /**
@@ -12,7 +12,7 @@ public class ItemModItemSword extends ItemSword{
         super(material);
         setRegistryName(MCWitcher.MODID,name);
         setUnlocalizedName(name);
-        setCreativeTab(MCWitcher.tabWitcher);
+        setCreativeTab(ClientProxy.tabWitcher);
 
     }
 

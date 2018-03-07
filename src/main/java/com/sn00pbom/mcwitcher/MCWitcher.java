@@ -1,11 +1,6 @@
 package com.sn00pbom.mcwitcher;
 
-import com.sn00pbom.mcwitcher.item.ModItems;
 import com.sn00pbom.mcwitcher.proxy.ClientProxy;
-import com.sn00pbom.mcwitcher.proxy.CommonProxy;
-import com.sn00pbom.mcwitcher.tab.CreativeTabWitcher;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -30,14 +25,13 @@ public class MCWitcher
     @Mod.Instance
     public static MCWitcher instance;
 
-    public static CreativeTabWitcher tabWitcher;
+
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
-        tabWitcher = new CreativeTabWitcher(CreativeTabs.getNextID(),"tab_mcwitcher");
-        ModItems.preInit();
+
         proxy.preInit(event);
 
 
@@ -51,8 +45,6 @@ public class MCWitcher
     {
 
         proxy.init(event);
-        // some example code
-        logger.info("SILVER SWORD >> {}", ModItems.basicSilverSword.getRegistryName());
 
     }
 

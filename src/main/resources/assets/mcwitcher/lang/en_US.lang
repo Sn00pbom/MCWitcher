@@ -3,5 +3,9 @@
 itemGroup.tab_mcwitcher=MCWitcher
 
 #Items
-item.silver_sword.name=Basic Silver Sword
+item.silver_sword1.name=Basic Silver Sword
+item.silver_sword2.name=Uncommon Silver Sword
+item.silver_sword3.name=Rare Silver Sword
+item.silver_sword4.name=Epic Silver Sword
+item.silver_sword5.name=Legendary Silver Sword
 item.silver_ingot.name=Silver Ingot

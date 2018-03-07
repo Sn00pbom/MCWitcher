@@ -1,9 +1,7 @@
 package com.sn00pbom.mcwitcher.proxy;
 
-import com.sn00pbom.mcwitcher.item.ModItems;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraftforge.client.model.ModelLoader;
+import com.sn00pbom.mcwitcher.tab.CreativeTabWitcher;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -13,17 +11,23 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
  */
 public class ClientProxy extends CommonProxy {
 
+    public static CreativeTabWitcher tabWitcher;
+
     @Override
     public void preInit(FMLPreInitializationEvent event) {
-        ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("mcwitcher:silver_sword", "inventory");
-        ModelLoader.setCustomModelResourceLocation(ModItems.basicSilverSword, 0, itemModelResourceLocation);
         super.preInit(event);
+
+
+        tabWitcher = new CreativeTabWitcher(CreativeTabs.getNextID(),"tab_mcwitcher");
+
+//        ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("mcwitcher:silver_sword", "inventory");
+//        ModelLoader.setCustomModelResourceLocation(ModItems.basicSilverSword, 0, itemModelResourceLocation);
+
     }
 
     @Override
     public void init(FMLInitializationEvent event) {
         super.init(event);
-        ModItems.registerRenders();
 
     }
 

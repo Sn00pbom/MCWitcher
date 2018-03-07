@@ -1,5 +1,6 @@
 package com.sn00pbom.mcwitcher.tab;
 
+import com.sn00pbom.mcwitcher.item.ModItem;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -17,7 +18,7 @@ public class CreativeTabWitcher extends CreativeTabs {
 
     @Override
     public ItemStack getTabIconItem(){
-        return new ItemStack(Items.IRON_SWORD);
+        return new ItemStack(ModItem.W_ICON.getItem());
     }
 
 }
